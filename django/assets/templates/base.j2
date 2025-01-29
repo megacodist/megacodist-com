@@ -11,7 +11,7 @@
 
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
   <meta charset="utf-8">
   <!-- If you are going to target IE8 & IE9, uncomment the following tag (it must be as close to the top of HEAD element as you can)...
@@ -55,6 +55,9 @@
   <main class="container">
     {% block main %}
     {% endblock main %}
+
+    {# The theme toggler #}
+    <button id="theme-toggler"></button>
   </main>
 
   {# Including footer---------------------------------------------------- -#}
@@ -65,11 +68,14 @@
   {% endblock EndingReservedTags %}
 
   {# Including JS files at the end of page ------------------------------ -#}
-  {% block jsFiles %}
+  {% block jsFiles %}  
+    {# Bootstrap #}
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 
     {# Enabling Box Icons icon library -#}
     <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+
+    <script defer type="module" src="{{ static('scripts/base.js') }}"></script>
   {% endblock jsFiles %}
 
   {# Including JS scripts the end of page ------------------------------  -#}
