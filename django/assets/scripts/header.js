@@ -17,10 +17,17 @@ import { showElemAccessErr } from '/assets/scripts/funcs.js';
         // Adding click handler for `theme-toggler` button...
         let themeToggler = document.getElementById('theme-toggler');
         if (!themeToggler) {
-            showElemAccessErr('start-stop');
+            showElemAccessErr('theme-toggler');
             return;
         }
         themeToggler.addEventListener('click', onThemeTogglerClicked);
+        //
+        let hamburgerIcon = document.getElementById('hamburger-icon');
+        if (!hamburgerIcon) {
+            showElemAccessErr('hamburger-icon');
+            return;
+        }
+        hamburgerIcon.addEventListener('click', onHamburgerIconClicked);
     }
     /**
      * Returns the preferred theme which is the first available value in the
@@ -47,20 +54,29 @@ import { showElemAccessErr } from '/assets/scripts/funcs.js';
      */
     function switchTheme(theme) {
         const ROOT = document.documentElement;
-        let themeToggler = document.getElementById('theme-toggler');
-        if (!themeToggler) {
-            showElemAccessErr('start-stop');
+        //
+        let darkModeSvg = document.getElementById('dark-mode-icon');
+        if (!darkModeSvg) {
+            showElemAccessErr('dark-mode-icon');
+            return;
+        }
+        //
+        let lightModeSvg = document.getElementById('light-mode-icon');
+        if (!lightModeSvg) {
+            showElemAccessErr('light-mode-icon');
             return;
         }
         switch (theme) {
             case 'light':
                 ROOT.setAttribute('data-theme', theme);
-                themeToggler.style.backgroundImage = "url('/assets/img/dark-mode.png')";
+                darkModeSvg.style.display = 'block';
+                lightModeSvg.style.display = 'none';
                 localStorage.setItem('theme', theme);
                 break;
             case 'dark':
                 ROOT.setAttribute('data-theme', theme);
-                themeToggler.style.backgroundImage = "url('/assets/img/light-mode.png')";
+                darkModeSvg.style.display = 'none';
+                lightModeSvg.style.display = 'block';
                 localStorage.setItem('theme', theme);
                 break;
             default:
@@ -77,6 +93,20 @@ import { showElemAccessErr } from '/assets/scripts/funcs.js';
         }
         catch (err) {
             console.error(err);
+        }
+    }
+
+    function onHamburgerIconClicked(){
+        //
+        let hamburgerMenu = document.getElementById('hamburger-menu');
+        if (!hamburgerMenu) {
+            showElemAccessErr('hamburger-icon');
+            return;
+        }
+        if (hamburgerMenu.style.display === 'none' || hamburgerMenu.style.display === '') {
+            hamburgerMenu.style.display = 'flex'; // Set to flex
+        } else {
+            hamburgerMenu.style.display = 'none'; // Set to none
         }
     }
     // Applying the initial theme...

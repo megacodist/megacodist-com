@@ -1,17 +1,63 @@
-header {
-    border-bottom: 5px solid orange;
-}
-div.mm1-header {
-    padding: 10px;
-    border-bottom: 2px solid orange;
-}
-div.mm1-header  h1, div.mm1-header p {
-    color: orange;
-    text-shadow: 2px 2px 10px black;
 
-    /* Making the text unselectable */
-    -webkit-user-select: none; /* Safari */        
-    -moz-user-select: none;    /* Firefox */
-    -ms-user-select: none;     /* IE10+/Edge */
-    user-select: none;         /* Standard */
+
+header {
+    grid-area: header;
+    color: var(--m3-txt-clr);
+	background-color: var(--m3-banner-bg-clr);
+    border-bottom: var(--m3-line-small) solid var(--m3-a-link-clr);
+}
+header > nav.navbar {
+    display: flex; /* Use flexbox for layout */
+    flex-direction: row; /* Arrange items horizontally */
+    justify-content: space-between; /* Space out left, middle, and right sections */
+    align-items: center; /* Vertically align items in the navbar */
+    padding: 15px 20px; /* Padding around the navbar */
+}
+
+/* Styling the middle div of the navbar */
+header > nav.navbar > div.navbar-middle {
+    display: flex;
+    flex-direction: row; /* Arrange items horizontally */
+    column-gap: var(--m3-spacing-small);
+    align-items: center;
+}
+
+/* Styling the right div of the navbar */
+header > nav.navbar div.navbar-right {
+    display: flex;
+    flex-direction: row; /* Arrange items horizontally */
+    align-items: center;
+    position: relative;
+}
+header > nav.navbar div.navbar-right #light-mode-svg {
+    display: none;
+}
+header > nav.navbar div.navbar-right #dark-mode-svg {
+    display: block;
+}
+header > nav.navbar div.navbar-right #hamburger {
+    display: none;
+    position: relative;
+}
+header > nav.navbar div.navbar-right #hamburger-menu {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: var(--m3-banner-bg-clr);
+    border-top: var(--m3-line-small) solid var(--m3-a-link-clr);
+}
+
+@media (max-width: 400px) {
+    header > nav.navbar div.navbar-middle {
+        display: none;
+    }
+    header > nav.navbar #theme-toggler {
+        display: none;
+    }
+    header > nav.navbar div.navbar-right #hamburger {
+        display: block;
+    }
 }

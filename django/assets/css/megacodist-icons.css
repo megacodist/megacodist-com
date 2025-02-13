@@ -1,0 +1,83 @@
+@font-face {
+  font-family: 'megacodist-icons';
+  src:  url('../fonts/megacodist-icons.eot?87pjzl');
+  src:  url('../fonts/megacodist-icons.eot?87pjzl#iefix') format('embedded-opentype'),
+    url('../fonts/megacodist-icons.ttf?87pjzl') format('truetype'),
+    url('../fonts/megacodist-icons.woff?87pjzl') format('woff'),
+    url('../fonts/megacodist-icons.svg?87pjzl#megacodist-icons') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+i {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'megacodist-icons' !important;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.m3-icons-telegram:before {
+  content: "\e912";
+}
+.m3-icons-linkedin:before {
+  content: "\e902";
+}
+.m3-icons-dark-mode:before {
+  content: "\e903";
+}
+.m3-icons-django:before {
+  content: "\e904";
+}
+.m3-icons-external-link:before {
+  content: "\e905";
+}
+.m3-icons-github:before {
+  content: "\e906";
+}
+.m3-icons-hamburger-menu:before {
+  content: "\e907";
+}
+.m3-icons-instagram:before {
+  content: "\e908";
+}
+.m3-icons-license:before {
+  content: "\e909";
+}
+.m3-icons-light-mode:before {
+  content: "\e90a";
+}
+.m3-icons-megacodist:before {
+  content: "\e90b";
+}
+.m3-icons-python:before {
+  content: "\e90c";
+}
+.m3-icons-whatsapp:before {
+  content: "\e90d";
+}
+.m3-icons-x:before {
+  content: "\e90e";
+}
+.m3-icons-creative-commons-by:before {
+  content: "\e90f";
+}
+.m3-icons-creative-commons:before {
+  content: "\e910";
+}
+.m3-icons-challenges:before {
+  content: "\e911";
+}
+.m3-icons-about-me:before {
+  content: "\e901";
+}
+.m3-icons-articles:before {
+  content: "\e900";
+}
