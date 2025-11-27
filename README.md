@@ -1,36 +1,62 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# `megacodist.com` Source Code
+
+## Tech Stack Requirements
+
+To ensure maximum stability, reproducibility, and performance, this project is carefully tuned to run on a modern, battle‑tested stack. Each component has been chosen to guarantee smooth developer experience and long‑term maintainability.
+
+*   **Runtime:** Node.js `v24.11.1`  
+    Provides a fast, reliable JavaScript runtime with cutting‑edge features and security updates.
+
+*   **Package Manager:** pnpm `v10.23.0`  
+    A blazing‑fast, disk‑space‑efficient package manager that ensures consistent installs across environments.
+
+*   **Framework:** Next.js `v16.0.4`  
+    The powerful React framework for building scalable, production‑ready applications with ease.
 
 ## Getting Started
 
-First, run the development server:
+1.  **Clone the repository:**
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+    ```bash
+    git clone https://github.com/megacodist/megacodist-com.git
+    cd megacodist-com
+    ```
+
+2.  **Enable Corepack (Ensures correct pnpm version):**  
+    In Windows PowerShell, you might need an elevated shell.
+
+    ```bash
+    corepack enable
+    ```
+
+3.  **Install dependencies:**
+
+    ```bash
+    pnpm install
+    ```
+
+    *Note: Do not use `npm install` or `yarn`. This project relies on `pnpm-lock.yaml` for reproducibility.*
+
+4.  **Run the development server:**
+
+    ```bash
+    pnpm dev
+    ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Project Structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- `src/app`: App Router pages and layouts.
+- `src/components`: Reusable UI components (Header, Footer).
+- `public`: Static assets.
 
-## Learn More
+## Deployment
 
-To learn more about Next.js, take a look at the following resources:
+This project is optimized for deployment on Vercel, Cloudflare Pages, or GitHub Pages.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+**Build Command:**
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```bash
+pnpm build
+```
