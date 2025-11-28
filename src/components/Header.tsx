@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
+import Logo from "@/../public/megacodist.svg";
 
 export default function Header() {
   const { theme, setTheme } = useTheme();
@@ -23,10 +24,8 @@ export default function Header() {
       
       {/* 1. LOGO (Left) */}
       <Link href="/" aria-label="Home">
-        <svg viewBox="0 0 100 100" className="w-8 h-8 fill-current">
-          {/* PASTE YOUR LOGO SVG PATH HERE */}
-          <circle cx="50" cy="50" r="40" /> 
-        </svg>
+        {/* Import and use the SVG as a React component so it's not hardcoded here */}
+        <Logo className="w-8 h-8 text-current fill-current" />
       </Link>
 
       {/* Right Side Group */}
