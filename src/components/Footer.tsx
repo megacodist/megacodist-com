@@ -1,43 +1,40 @@
 import { FaGithub, FaInstagram, FaLinkedin, FaTelegram, FaWhatsapp } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
+import Image from "next/image";
+import styles from "./Footer.module.css";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-gray-900 text-white py-6 mt-auto">
-      {/* 
-        1. flex-col-reverse: Mobile. Stacks items bottom-to-top. 
-           (Icons become Top, Copyright becomes Bottom)
-        2. md:flex-row: Desktop. Resets to side-by-side row.
-           (Copyright Left, Icons Right)
-      */}
-      <div className="container mx-auto px-4 flex flex-col-reverse md:flex-row items-center justify-between gap-4">
-        
-        {/* Item 1: Copyright */}
-        <div className="text-sm text-gray-400">
-          &copy; {currentYear} Megacodist. All rights reserved.
-        </div>
+    <footer className={styles.footer}>
+      <div className={styles.ftrContainer}>
 
         {/* Item 2: Social Icons */}
-        <div className="flex items-center gap-6">
-          <a href="#" className="hover:text-blue-500 transition-colors" aria-label="LinkedIn">
-            <FaLinkedin size={24} />
+        <div className={styles.copyright}>
+          &copy; {currentYear} Megacodist. See{" "}
+          <a href="/license" className="link link-primary">License</a>.
+        </div>
+        
+        {/* Item 3: Social Icons */}
+        <div className={styles.socialIcons}>
+          <a href="#" className="m3-icon-button hover:text-blue-500" aria-label="LinkedIn">
+            <FaLinkedin className="m3-icon-m" />
           </a>
-          <a href="#" className="hover:text-gray-400 transition-colors" aria-label="GitHub">
-            <FaGithub size={24} />
+          <a href="#" className="m3-icon-button hover:text-gray-400" aria-label="GitHub">
+            <FaGithub className="m3-icon-m" />
           </a>
-          <a href="#" className="hover:text-white transition-colors" aria-label="X (Twitter)">
-            <FaXTwitter size={24} />
+          <a href="#" className="m3-icon-button hover:text-white" aria-label="X (Twitter)">
+            <FaXTwitter className="m3-icon-m" />
           </a>
-          <a href="#" className="hover:text-blue-400 transition-colors" aria-label="Telegram">
-            <FaTelegram size={24} />
+          <a href="#" className="m3-icon-button hover:text-blue-400" aria-label="Telegram">
+            <FaTelegram className="m3-icon-m" />
           </a>
-          <a href="#" className="hover:text-green-500 transition-colors" aria-label="WhatsApp">
-            <FaWhatsapp size={24} />
+          <a href="#" className="m3-icon-button hover:text-green-500" aria-label="WhatsApp">
+            <FaWhatsapp className="m3-icon-m" />
           </a>
-          <a href="#" className="hover:text-pink-500 transition-colors" aria-label="Instagram">
-            <FaInstagram size={24} />
+          <a href="#" className="m3-icon-button hover:text-pink-500" aria-label="Instagram">
+            <FaInstagram className="m3-icon-m" />
           </a>
         </div>
 

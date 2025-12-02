@@ -1,22 +1,10 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
-import { Providers } from "@/components/Providers";
+import { ThemeProvider } from "@/components/theme-provider";
 
-
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -29,25 +17,25 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      {/* 
-         flex-col: Stacks elements vertically
-         min-h-screen: Forces body to be at least as tall as the browser window
+    <html lang="en" suppressHydrationWarning >
+      {/*
+        flex-col: Stacks elements vertically
+        min-h-screen: Forces body to be at least as tall as the browser window
       */}
       <body className="flex flex-col min-h-screen antialiased">
-        <Providers>
-          <Header />
-          
-          {/* 
-            flex-grow: This tells the main content to take up ALL available space,
-            pushing the footer to the bottom.
+        <ThemeProvider>
+          <Header/>
+
+          {/*
+            flex-grow: This tells the main content to take up ALL available
+            space, pushing the footer to the bottom.
           */}
           <main className="flex-grow">
             {children}
           </main>
           
           <Footer />
-        </Providers>
+        </ThemeProvider>
       </body>
     </html>
   );
