@@ -1,6 +1,5 @@
 "use client"; // Required for onClick events
 
-import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import styles from "./Header.module.css";
@@ -24,29 +23,37 @@ export default function Header() {
   }
 
   return (
-    <header className="navbar sticky top-0 z-50">
-      <div className="navbar-start">
+    <header className={`navbar ${styles.header}`}>
+      <div className={`navbar-start ${styles.headerGroup}`}>
         {/* The Home Page */}
-        <Link href="/" className="m3-icon-button"
-          aria-label="Go to the Home page">
-          <SvgHomePage className="m3-icon-m" />
-        </Link>
+        <div className="tooltip tooltip-bottom" data-tip="Home Page">
+          <Link href="/" className="m3-icon-btn"
+            aria-label="Go to the Home page">
+            <SvgHomePage className={`${styles.headerIcon}`} />
+          </Link>
+        </div>
 
-        {/* Megacodist Logo */}
-        <Link href="/about" className="m3-icon-button"
-          aria-label="About Megacodist">
-          <SvgMegacodist className="m3-icon-m" />
-        </Link>
+        {/* The Megacodist Logo */}
+        <div className="tooltip tooltip-bottom" data-tip="About Megacodist">
+          <Link href="/about" className="m3-icon-btn"
+            aria-label="About Megacodist">
+            <SvgMegacodist className={`${styles.headerIcon}`} />
+          </Link>
+        </div>
       </div>
 
       {/* Right Side Group */}
-      <div className="navbar-end">
-        <Link href="/license" className="m3-icon-button"
-          aria-label="Go to the License page">
-          <SvgLicense className="m3-icon-m"/>
-        </Link>
+      <div className={`navbar-end ${styles.headerGroup}`}>
+        <div className="tooltip tooltip-bottom" data-tip="License Page">
+          <Link href="/license" className="m3-icon-btn"
+            aria-label="Go to the License page">
+            <SvgLicense className={`${styles.headerIcon}`} />
+          </Link>
+        </div>
 
-        <ThemeSwitch />
+        <div className="tooltip tooltip-bottom" data-tip="Light/dark theme">
+          <ThemeSwitch />
+        </div>
       </div>
     </header>
   );

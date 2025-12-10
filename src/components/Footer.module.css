@@ -1,7 +1,7 @@
 @reference '../app/globals.css';
 
 .footer {
-  @apply py-6;
+  @apply py-6 border-t bg-base-300;
 }
 
 .ftrContainer {
@@ -16,4 +16,8 @@
 
 .socialIcons {
   @apply flex items-center gap-6;
+}
+
+.ftrIcon {
+  @apply w-(--size-m3-xl) h-(--size-m3-xl);
 }

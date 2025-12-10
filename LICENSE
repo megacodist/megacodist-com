@@ -28,6 +28,19 @@ Copyright (c) 2025 Megacodist
 
 ---
 
+## Third-Part Software
+
+This software is built upon the following open-source technologies:
+
+*   Node.js
+*   pnpm
+*   React
+*   Next.js
+*   Tailwind CSS
+*   daisyUI
+
+These components are the property of their respective creators and are subject to their own separate license terms. The use of these tools in this project does not imply endorsement by their copyright holders.
+
 ## AI Companions
 
 1. **Google Code Assist**

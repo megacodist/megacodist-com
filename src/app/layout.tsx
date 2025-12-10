@@ -30,7 +30,7 @@ export default function RootLayout({
             flex-grow: This tells the main content to take up ALL available
             space, pushing the footer to the bottom.
           */}
-          <main className="flex-grow">
+          <main className="m3-container flex-grow">
             {children}
           </main>
           
