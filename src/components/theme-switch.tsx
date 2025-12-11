@@ -1,13 +1,28 @@
 "use client";
 
-import Image from "next/image";
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
 
 import { SvgMoon, SvgSun } from "@/components/svgs";
 
+/**
+ * Props for the ThemeSwitch component.
+ */
+type ThemeSwitchProps = {
+  /**
+   * Optional CSS class name to apply to the sun and moon icons.
+   */
+  iconClassName?: string;
+};
 
-export default function ThemeSwitch() {
+/**
+ * A component that provides a toggle switch to change the theme between
+ * light and dark modes. It also handles hydration mismatch between server
+ * and client by showing a placeholder.
+ * @param {ThemeSwitchProps} props - The props for the component.
+ * @returns {JSX.Element} The rendered theme switch component or a placeholder during mounting.
+ */
+export default function ThemeSwitch({ iconClassName }: ThemeSwitchProps) {
   const { setTheme, resolvedTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
 
@@ -23,7 +38,7 @@ export default function ThemeSwitch() {
   return (
     <label className="flex cursor-pointer gap-2 items-center">
       {/* Sun Icon */}
-      <SvgSun className="m3-icon-m animate-spin-slow"/>
+      <SvgSun className={`${iconClassName} animate-spin-slow`}/>
 
       {/* DaisyUI Toggle */}
       <input
@@ -36,7 +51,7 @@ export default function ThemeSwitch() {
       />
 
       {/* Moon Icon */}
-      <SvgMoon className="m3-icon-m animate-spin-slow"/>
+      <SvgMoon className={`${iconClassName} animate-spin-slow`}/>
     </label>
   );
 }

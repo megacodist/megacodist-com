@@ -18,7 +18,6 @@
 
 .headerGroup {
   @apply flex items-center
-    text-neutral-content
     gap-4;
 }
 

@@ -52,7 +52,7 @@ export default function Header() {
         </div>
 
         <div className="tooltip tooltip-bottom" data-tip="Light/dark theme">
-          <ThemeSwitch />
+          <ThemeSwitch iconClassName="m3-icon-m" />
         </div>
       </div>
     </header>

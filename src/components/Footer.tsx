@@ -18,24 +18,36 @@ export default function Footer() {
         
         {/* Item 3: Social Icons */}
         <div className={ftrStyles.socialIcons}>
-          <a href="#" className="m3-icon-btn hover:text-blue-500" aria-label="LinkedIn">
-            <FaLinkedin className={ftrStyles.ftrIcon} />
-          </a>
-          <a href="#" className="m3-icon-btn hover:text-gray-400" aria-label="GitHub">
-            <FaGithub className={ftrStyles.ftrIcon} />
-          </a>
-          <a href="#" className="m3-icon-btn hover:text-white" aria-label="X (Twitter)">
-            <FaXTwitter className={ftrStyles.ftrIcon} />
-          </a>
-          <a href="#" className="m3-icon-btn hover:text-blue-400" aria-label="Telegram">
-            <FaTelegram className={ftrStyles.ftrIcon} />
-          </a>
-          <a href="#" className="m3-icon-btn hover:text-green-500" aria-label="WhatsApp">
-            <FaWhatsapp className={ftrStyles.ftrIcon} />
-          </a>
-          <a href="#" className="m3-icon-btn hover:text-pink-500" aria-label="Instagram">
-            <FaInstagram className={ftrStyles.ftrIcon} />
-          </a>
+          <div className="tooltip tooltip-top" data-tip="LinkedIn">
+            <a href="#" className="m3-icon-btn hover:text-blue-500" aria-label="LinkedIn">
+              <FaLinkedin className={ftrStyles.ftrIcon} />
+            </a>
+          </div>
+          <div className="tooltip tooltip-top" data-tip="GitHub">
+            <a href="#" className="m3-icon-btn hover:text-gray-400" aria-label="GitHub">
+              <FaGithub className={ftrStyles.ftrIcon} />
+            </a>
+          </div>
+          <div className="tooltip tooltip-top" data-tip="X (Twitter)">
+            <a href="#" className="m3-icon-btn hover:text-white" aria-label="X (Twitter)">
+              <FaXTwitter className={ftrStyles.ftrIcon} />
+            </a>
+          </div>
+          <div className="tooltip tooltip-top" data-tip="Telegram">
+            <a href="#" className="m3-icon-btn hover:text-blue-400" aria-label="Telegram">
+              <FaTelegram className={ftrStyles.ftrIcon} />
+            </a>
+          </div>
+          <div className="tooltip tooltip-top" data-tip="WhatsApp">
+            <a href="#" className="m3-icon-btn hover:text-green-500" aria-label="WhatsApp">
+              <FaWhatsapp className={ftrStyles.ftrIcon} />
+            </a>
+          </div>
+          <div className="tooltip tooltip-top" data-tip="Instagram">
+            <a href="#" className="m3-icon-btn hover:text-pink-500" aria-label="Instagram">
+              <FaInstagram className={ftrStyles.ftrIcon} />
+            </a>
+          </div>
         </div>
 
       </div>
